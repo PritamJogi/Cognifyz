@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Changing Button</title>
+  <!-- <link rel="stylesheet" href="task2.css"> -->
+</head>
+<style>
+    button {
+      padding: 20px 30px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+
+    }
+  </style>
+
+<body>
+  <button id="colorBtn">Click me to change color</button>
+
+  <script>
+    document.getElementById("colorBtn").addEventListener("click", function() {
+      var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+      this.style.backgroundColor = randomColor;
+    });
+  </script>
+
+  <br>
+  <hr>
+
+<script>
+    var currentTime = new Date();
+    var currentHour = currentTime.getHours();
+
+    var greeting;
+
+    if (currentHour < 12) {
+      greeting = "Good morning!";
+    } else if (currentHour < 18) {
+      greeting = "Good afternoon!";
+    } else {
+      greeting = "Good evening!";
+    }
+
+    alert(greeting);
+  </script>
+
+<input type="text" id="num1" placeholder="Enter first number">
+<input type="text" id="num2" placeholder="Enter second number">
+<br>
+<br>
+<button onclick="calculate()">Calculate</button>
+<p id="result"></p>
+
+<script>
+  function calculate() {
+    var num1 = parseFloat(document.getElementById('num1').value);
+    var num2 = parseFloat(document.getElementById('num2').value);
+    var result = num1 + num2;
+    document.getElementById('result').innerText = "Result: " + result;
+  }
+</script>
+
+
+</body>
+</html>
